@@ -6,7 +6,6 @@ from collections import defaultdict, OrderedDict
 from .api_client import ApiClient
 from .year_settings import (
     UIFW_YEARS,
-    IN_YEAR_YEARS,
     YEARS,
     AUDIT_OPINION_YEARS,
 )
@@ -593,7 +592,7 @@ class ApiData(object):
                 "cube": "audit_opinions",
                 "cut": {
                     "demarcation.code": [self.geo_code],
-                    "financial_year_end.year": AUDIT_OPINION_YEARS[:4],
+                    "financial_year_end.year": self.audit_opinion_years[:4],
                 },
                 "fields": [
                     "opinion.code",
