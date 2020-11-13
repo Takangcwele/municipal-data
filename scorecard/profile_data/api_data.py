@@ -5,9 +5,9 @@ from collections import defaultdict, OrderedDict
 
 from .api_client import ApiClient
 from .year_settings import (
-    UIFW_YEARS,
-    YEARS,
-    AUDIT_OPINION_YEARS,
+    LAST_AUDIT_YEAR,
+    LAST_OPINION_YEAR,
+    LAST_UIFW_YEAR,
 )
 
 
@@ -17,15 +17,21 @@ YEAR_ITEM_DRILLDOWN = [
 ]
 
 
+def generate_target_years(origin_year):
+    return list(reversed(range(origin_year - 3, origin_year + 1)))
+
+
 class APIOverloadedException(BaseException):
     pass
 
 
 class ApiData(object):
-    def __init__(self, client, geo_code, years=YEARS):
+
+    def __init__(self, client, geo_code, last_audit_year=LAST_AUDIT_YEAR, last_opinion_year=LAST_OPINION_YEAR, last_uifw_year=LAST_UIFW_YEAR):
         self.client = client
-        self.years = list(years)
-        self.uifw_years = list(UIFW_YEARS)
+        self.years = generate_target_years(last_audit_year)
+        self.audit_opinion_years = generate_target_years(last_opinion_year)
+        self.uifw_years = generate_target_years(last_uifw_year)
         self.geo_code = str(geo_code)
         self.budget_year = self.years[0] + 1
 
