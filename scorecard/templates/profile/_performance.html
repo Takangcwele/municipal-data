@@ -95,7 +95,7 @@
     </div>
 
     <div class="indicator">
-	{% with indicators.cash_at_year_end.values|first as latest %}
+	{% with indicators.cash_balance.values|first as latest %}
 	<h2 class="sub-heading">
 	    Cash Balance
 	    <span class="indicator-date">{{ latest.date|finyear }}</span>
@@ -116,7 +116,7 @@
 		    {% endif %}
 		</div>
 		<div class="indicator-description">Cash balance at the end of the financial year.</div>
-		{% render_comparatives "cash_at_year_end" %}
+		{% render_comparatives "cash_balance" %}
 		<table class="indicator-key">
 		    <tr>
 			<td class="key-symbol rating rating-good">good</td>
@@ -131,7 +131,7 @@
 	    </div>
 
 	    <div class="col-sm-4">
-		<div class="chart-container" data-chart="column-cash_at_year_end" data-unit="currency"></div>
+		<div class="chart-container" data-chart="column-cash_balance" data-unit="currency"></div>
 	    </div>
 
 	    <div class="col-sm-4">
@@ -145,7 +145,7 @@
 	    </div>
 	</div>
 	<div class="calc collapse" id="cash-calc">
-	    <div class="ref"><span class="h5">Reference:</span> <a href="{{ indicators.cash_at_year_end.ref.url }}" target="_blank">{{ indicators.cash_at_year_end.ref.title }}</a></div>
+	    <div class="ref"><span class="h5">Reference:</span> <a href="{{ indicators.cash_balance.ref.url }}" target="_blank">{{ indicators.cash_balance.ref.title }}</a></div>
 
 	    <h5>Formula:</h5>
 	    <ul class="formula">
