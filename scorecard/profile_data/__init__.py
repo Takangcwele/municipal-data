@@ -20,16 +20,17 @@ to indicate in the page that it is missing.
 from itertools import groupby
 import dateutil.parser
 
-from .utils import *
 from .year_settings import LAST_AUDIT_QUARTER
 from .api_client import ApiClient
 from .api_data import ApiData
-from .indicator_calculator import IndicatorCalculator
-from .current_ratio import CurrentRatio
-from .liquidity_ratio import LiquidityRatio
-from .current_debtors_collection_rate import CurrentDebtorsCollectionRate
-from .cash_balance import CashBalance
-from .cash_coverage import CashCoverage
+
+from .indicators.utils import *
+from .indicators.indicator_calculator import IndicatorCalculator
+from .indicators.current_ratio import CurrentRatio
+from .indicators.liquidity_ratio import LiquidityRatio
+from .indicators.current_debtors_collection_rate import CurrentDebtorsCollectionRate
+from .indicators.cash_balance import CashBalance
+from .indicators.cash_coverage import CashCoverage
 
 
 def get_indicator_calculators(has_comparisons=None):
