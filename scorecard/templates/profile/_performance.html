@@ -227,7 +227,7 @@
     </div>
 
     <div class="indicator">
-	{% with indicators.op_budget_diff.values|first as latest %}
+	{% with indicators.operating_budget_spending.values|first as latest %}
 	<h2>
 	    Spending of Operating Budget <span class="indicator-date">{{ latest.date|finyear }}</span>
 	    {% include 'profile/_has_updated.html' %}
@@ -249,7 +249,7 @@
 		    {% endif %}
 		</div>
 		<div class="indicator-description">Difference between budgeted operating expenditure and what was actually spent.</div>
-		{% render_comparatives "op_budget_diff" %}
+		{% render_comparatives "operating_budget_spending" %}
 		<table class="indicator-key">
 		    <tr>
 			<td class="key-symbol rating rating-good">good</td>
@@ -267,7 +267,7 @@
 		<div class="show-calc"><a href="#op-budget-calc" data-toggle="collapse" class="show-more"><span class="icon"><i class="fa fa-plus" aria-hidden="true"></i></span> Show calculation</a></div>
 	    </div>
 	    <div class="col-sm-4">
-		<div class="chart-container" data-chart="column-op_budget_diff" data-unit="percent"></div>
+		<div class="chart-container" data-chart="column-operating_budget_spending" data-unit="percent"></div>
 	    </div>
 	    <div class="col-sm-4">
 		<div class="panel panel-didyouknow">
@@ -281,7 +281,7 @@
 	    </div>
 	</div>
 	<div class="calc collapse" id="op-budget-calc">
-	    <div class="ref"><span class="h5">Reference:</span> <a href="{{ indicators.op_budget_diff.ref.url }}" target="_blank">{{ indicators.op_budget_diff.ref.title }}</a></div>
+	    <div class="ref"><span class="h5">Reference:</span> <a href="{{ indicators.operating_budget_spending.ref.url }}" target="_blank">{{ indicators.operating_budget_spending.ref.title }}</a></div>
 
 	    <h5>Formula:</h5>
 	    <ul class="formula">
