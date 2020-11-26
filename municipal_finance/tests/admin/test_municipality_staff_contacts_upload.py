@@ -8,6 +8,8 @@ from ...models import MunicipalityStaffContactsUpload
 
 
 class MunicipalityStaffContactsUploadTestCase(TransactionTestCase):
+    serialized_rollback = True
+
     def setUp(self):
         self.factory = RequestFactory()
         self.user = User.objects.create_superuser(

@@ -8,6 +8,8 @@ from ...models import MunicipalityProfilesCompilation
 
 
 class MunicipalityProfileCompilationAdminTestCase(TransactionTestCase):
+    serialized_rollback = True
+
     def setUp(self):
         self.factory = RequestFactory()
         self.user = User.objects.create_superuser(
